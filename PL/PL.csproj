@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+	<BaseOutputPath>$(SolutionDir)\bin\</BaseOutputPath>
+	<OutputPath>$(SolutionDir)\bin\</OutputPath>
+	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+	<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+	<UseCommonOutputDirectory>true</UseCommonOutputDirectory>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Engineer\jess-bailey-q10VITrVYUM-unsplash.jpg" />
+    <None Remove="jess-bailey-q10VITrVYUM-unsplash.jpg" />
+    <None Remove="TaskForList\jess-bailey-q10VITrVYUM-unsplash.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BL\BL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Engineer\jess-bailey-q10VITrVYUM-unsplash.jpg" />
+    <Resource Include="jess-bailey-q10VITrVYUM-unsplash.jpg" />
+    <Resource Include="TaskForList\jess-bailey-q10VITrVYUM-unsplash.jpg" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,35 @@
+﻿<Window x:Class="PL.EngineerWindows.TaskOfEngineerListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL.EngineerWindows"
+        mc:Ignorable="d"
+         DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+        Title="TaskOfEngineerListWindow" Height="450" Width="800">
+    <!--Extrnal Grid-->
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/TaskForList/jess-bailey-q10VITrVYUM-unsplash.jpg"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="500*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+       
+        <!--list of all tasks using data binding-->
+        <ListView Grid.Row="1"  ItemsSource="{Binding TasksList}" SelectionChanged="ListView_SelectionChanged" MouseDoubleClick="SingleEngWindow_onDoubleClick" Opacity="0.8" FontSize="14" FontWeight="Bold" Foreground="#FF0F0F0F">
+            <ListView.Background>
+                <ImageBrush/>
+            </ListView.Background>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+    </Grid>
+</Window>

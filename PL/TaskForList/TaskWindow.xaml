@@ -1,0 +1,117 @@
+﻿<Window x:Class="PL.TaskForList.TaskWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL.TaskForList"
+        mc:Ignorable="d"
+        DataContext="{Binding Task, RelativeSource={RelativeSource Self}, Mode=TwoWay}"
+        Title="TaskWindow" Height="450" Width="800">
+
+    <StackPanel Opacity="0.85">
+        <StackPanel.Background>
+            <ImageBrush ImageSource="/TaskForList/jess-bailey-q10VITrVYUM-unsplash.jpg"/>
+        </StackPanel.Background>
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="ID" Grid.Column="0" Grid.Row="0" BorderBrush="#FFE89999" FontSize="14" FontWeight="Bold"/>
+            <TextBox Width="100" Grid.Column="1" Grid.Row="0" Height="20"
+                 Text="{Binding Id, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"
+                    IsEnabled="False"/>
+
+            <Label Content="Name" Grid.Column="0" Grid.Row="1" FontSize="14" FontWeight="Bold"/>
+            <TextBox Width="100" Grid.Column="1" Grid.Row="1" Height="20"
+                 Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+
+            <Label Content="Difficulty" Grid.Column="0" Grid.Row="2" FontSize="14" FontWeight="Bold"/>
+            <ComboBox Width="100" Grid.Column="1"  Grid.Row="2" Height="30"
+                  ItemsSource="{Binding Source={StaticResource LevelsCollectionKey}}"
+                  SelectedValue="{Binding difficulty, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+
+            <Label Content="Status" Grid.Column="0" Grid.Row="3" FontSize="14" FontWeight="Bold"/>
+            <TextBox Width="100" Grid.Column="1"  Grid.Row="3" Height="20"
+                     Text="{Binding StatusTask, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"
+               Margin="150,3,150,2"
+                     IsEnabled="False"/>
+
+
+            <Label Content="Task-Description" Grid.Column="0"  Grid.Row="4" FontSize="14" FontWeight="Bold"/>
+            <TextBox Width="100" Grid.Column="1"  Grid.Row="4" Height="30"
+                 Text="{Binding TaskDescription, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+
+            <Label Content="Product" Grid.Column="0" Grid.Row="5" FontSize="14" FontWeight="Bold"/>
+            <TextBox Width="100" Grid.Column="1" Grid.Row="5" Height="30"
+                 Text="{Binding Product, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+
+            <Label Content="Comments" Grid.Column="0" Grid.Row="6" FontSize="14" FontWeight="Bold"/>
+            <TextBox Width="100" Grid.Column="1" Grid.Row="6" Height="30"
+                Text="{Binding Comments, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="150,5,150,15" Grid.RowSpan="2"/>
+
+            <Label Content="Create-Time" Grid.Column="0" Grid.Row="7" FontSize="14" FontWeight="Bold"/>
+            <DatePicker Width="100" Grid.Column="1" Grid.Row="7" Height="30"
+                 Text="{Binding CreateTime, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="150,5,150,15" Grid.RowSpan="2"/>
+
+            <Label Content="Begin-Work-Date-Planned" Grid.Column="0" Grid.Row="8" FontSize="14" FontWeight="Bold"/>
+            <DatePicker Width="100" Grid.Column="1" Grid.Row="8" Height="30"
+                  Text="{Binding BeginWorkDateP, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="150,8,150,12" Grid.RowSpan="2"/>
+
+            <Label Content="Begin-Work-Date" Grid.Column="0" Grid.Row="9" FontSize="14" FontWeight="Bold"/>
+            <DatePicker Width="100" Grid.Column="1" Grid.Row="9" Height="30"
+                  Text="{Binding BeginWorkDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="150,13,150,7" Grid.RowSpan="2"/>
+
+            <Label Content="Work-During" Grid.Column="0"  Grid.Row="10" FontSize="14" FontWeight="Bold"/>
+            <TextBox Width="100" Grid.Column="1"  Grid.Row="10" Height="20"
+                  Text="{Binding WorkDuring, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="150,13,150,17" Grid.RowSpan="2"/>
+
+            <Label Content="Dead-Line" Grid.Column="0" Grid.Row="11" FontSize="14" FontWeight="Bold"/>
+            <DatePicker Width="100" Grid.Column="1" Grid.Row="12" Height="30"
+                  Text="{Binding DeadLine, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="150,12,150,8" Grid.RowSpan="2"/>
+
+            <Label Content="End-Work-Time" Grid.Column="0" Grid.Row="12" FontSize="14" FontWeight="Bold"/>
+            <DatePicker Width="100" Grid.Column="1" Grid.Row="11" Height="30"
+                  Text="{Binding EndWorkTime, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="150,13,150,7" Grid.RowSpan="2"/>
+
+            <Label Content="Engineer-Id" Grid.Column="0" Grid.Row="13" FontSize="14" FontWeight="Bold" Visibility="{Binding Id,Converter={StaticResource ConvertIdToVisibilityKey},Mode=OneTime}"/>
+            <TextBox Width="100" Grid.Column="1" Grid.Row="13" Height="20" Visibility="{Binding Id,Converter={StaticResource ConvertIdToVisibilityKey},Mode=OneTime}"
+                 Text="{Binding Engineer.Id, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="150,13,150,92" Grid.RowSpan="2"/>
+
+            <Label Content="Engineer-Name" Grid.Column="0" Grid.Row="14" FontSize="14" FontWeight="Bold" Visibility="{Binding Id,Converter={StaticResource ConvertIdToVisibilityKey},Mode=OneTime}"/>
+            <TextBox Width="100" Grid.Column="1" Grid.Row="14" Height="20" 
+                 Text="{Binding Engineer.Name, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"
+                  Visibility="{Binding Id,Converter={StaticResource ConvertIdToVisibilityKey},Mode=OneTime}" Margin="150,10,150,70"/>
+
+            <Button Grid.Column="0" Grid.Row="14" Height="40" Width="150"
+                    Click="ShowDependencies_OnClick" Background="#FFF6C3C3"   FontSize="14" FontWeight="Bold" 
+                    Content="Show Dependencies" Visibility="{Binding Id,Converter={StaticResource ConvertIdToVisibilityKey},Mode=OneTime}" Margin="125,35,125,25" />
+
+
+            <Button Grid.Column="1" Grid.Row="14"  Width="120"
+                Click="Add_Update_OnClick" Background="#FFF6C3C3"   FontSize="14" FontWeight="Bold" 
+                Content="{Binding Id, Converter={StaticResource ConverIdToContentKey}, Mode=OneTime}" Height="40" Margin="140,35,140,25"/>
+
+
+
+        </Grid>
+    </StackPanel>
+</Window>

@@ -1,0 +1,27 @@
+﻿<Window x:Class="PL.EngineerWindows.IdentificationEngineerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL.EngineerWindows"
+        mc:Ignorable="d"
+        Title="IdentificationEngineerWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/jess-bailey-q10VITrVYUM-unsplash.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height ="80"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="1" Width="300" FontFamily="Arial Rounded MT Bold" TextAlignment="Center" LineHeight="72" FontSize="24"  >enter engineer id</TextBlock>
+        <TextBox Grid.Row="2"  Width="300"
+                 Text="{Binding EngineerId, Mode=TwoWay, NotifyOnValidationError=true,
+                    ValidatesOnExceptions=true}"/>
+        <Button Content ="show detailed task" Click="showDetailedTask_click" Background="#FFF1B7B7" Margin="300,10,300,13"  Grid.Row="4" FontSize="16" BorderBrush="#FF6A6666"/>
+    </Grid>
+</Window>

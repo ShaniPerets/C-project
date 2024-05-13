@@ -1,0 +1,78 @@
+﻿<Window x:Class="PL.Engineer.EngineerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL.Engineer"
+        mc:Ignorable="d"
+        DataContext="{Binding Engineer, RelativeSource={RelativeSource Self}, Mode=TwoWay}"
+        Title="EngineerWindow" Height="450" Width="800" >
+    <StackPanel Opacity="0.85">
+        <StackPanel.Background>
+            <ImageBrush ImageSource="/Engineer/jess-bailey-q10VITrVYUM-unsplash.jpg"/>
+        </StackPanel.Background>
+        <Grid Margin="25 40 25 10 " >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="ID" Grid.Column="0" Grid.Row="0" BorderBrush="#FFE89999" FontSize="14" FontWeight="Bold"/>
+            <TextBox Width="100" Grid.Column="1" Grid.Row="0" Height="30"
+                     Text="{Binding Id, Mode=TwoWay, NotifyOnValidationError=true,
+                        ValidatesOnExceptions=true}"
+                        IsEnabled="{Binding Id, Mode=OneTime, Converter={StaticResource ConverIdToBoolKey}}"/>
+
+            <Label Content="Name" Grid.Column="0" Grid.Row="1" FontSize="14" FontWeight="Bold"/>
+            <TextBox Width="100" Grid.Column="1" Grid.Row="1" Height="30"
+                     Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=true,
+                     ValidatesOnExceptions=true}"/>
+
+            <Label Content="EMail" Grid.Column="0" Grid.Row="2" FontSize="14" FontWeight="Bold"/>
+            <TextBox Width="100" Grid.Column="1" Grid.Row="2" Height="30"
+                     Text="{Binding EMail, Mode=TwoWay, NotifyOnValidationError=true,
+                      ValidatesOnExceptions=true}"/>
+
+            <Label Content="Level" Grid.Column="0" Grid.Row="3" FontSize="14" FontWeight="Bold"/>
+            <ComboBox Width="100" Grid.Column="1"  Grid.Row="3" Height="30"
+                      ItemsSource="{Binding Source={StaticResource LevelsCollectionKey}}"
+                      SelectedValue="{Binding Level, Mode=TwoWay, NotifyOnValidationError=true,
+                        ValidatesOnExceptions=true}"
+
+            />
+
+            <Label Content="Cost" Grid.Column="0"  Grid.Row="4" FontSize="14" FontWeight="Bold"/>
+            <TextBox Width="100" Grid.Column="1"  Grid.Row="4" Height="30"
+                     Text="{Binding Cost, Mode=TwoWay, NotifyOnValidationError=true,
+                     ValidatesOnExceptions=true}"/>
+
+            <Label Content="Task-Id" Grid.Column="0" Grid.Row="5" FontSize="14" FontWeight="Bold"/>
+            <TextBox Width="100" Grid.Column="1" Grid.Row="5" Height="30"
+                     Text="{Binding Task.Id, Mode=TwoWay, NotifyOnValidationError=true,
+                      ValidatesOnExceptions=true}"/>
+
+            <Label Content="Task-Name" Grid.Column="0" Grid.Row="6" FontSize="14" FontWeight="Bold"/>
+            <TextBox Width="100" Grid.Column="1" Grid.Row="6" Height="30"
+                     Text="{Binding Task.Alias, Mode=TwoWay, NotifyOnValidationError=true,
+                      ValidatesOnExceptions=true}"
+                      IsEnabled="false"/>
+
+            <Button Grid.Column="0" Grid.Row="7" Height="40" Grid.ColumnSpan="2" Width="120"
+                    Click="Add_Update_OnClick" Background="#FFF6C3C3"   FontSize="14" FontWeight="Bold" 
+                    Content="{Binding Id, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}"/>
+            
+
+            
+        </Grid>
+    </StackPanel>
+</Window>
